@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.1.0" />
+	<PackageReference Include="Zuravvski.DDD" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Integration.EventProcessor\Zuravvski.Infrastructure.Integration.EventProcessor.csproj" />
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Integration\Zuravvski.Infrastructure.Integration.csproj" />
+  </ItemGroup>
+
+</Project>
