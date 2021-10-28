@@ -6,7 +6,7 @@ namespace Zuravvski.Infrastructure.Web
     [ApiController]
     [Authorize]
     [Route("[controller]")]
-    public abstract class HitMeAppController : ControllerBase
+    public abstract class BaseController : ControllerBase
     {
     }
 }
