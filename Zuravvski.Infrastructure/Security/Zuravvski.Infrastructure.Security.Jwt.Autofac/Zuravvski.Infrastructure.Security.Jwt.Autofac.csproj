@@ -2,16 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+	<Description>Autofac Extensions Simple JWT Providers</Description>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Authors>Zuravvski</Authors>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Settings\Zuravvski.Infrastructure.Settings\Zuravvski.Infrastructure.Settings.csproj" />
-    <ProjectReference Include="..\Zuravvski.Infrastructure.Security.Jwt\Zuravvski.Infrastructure.Security.Jwt.csproj" />
+    <PackageReference Include="Zuravvski.Infrastructure.Settings" Version="1.0.0" />
+    <PackageReference Include="Zuravvski.Infrastructure.Security.Jwt" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
