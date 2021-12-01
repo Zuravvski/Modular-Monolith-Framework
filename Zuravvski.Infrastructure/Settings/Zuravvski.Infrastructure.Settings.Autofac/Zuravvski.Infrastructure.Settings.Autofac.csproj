@@ -5,6 +5,7 @@
 	<Description>Autofac Extensions For .NET Core Settings Extensions</Description>
 	<Copyright>Zuravvski IT Services</Copyright>
 	<Authors>Zuravvski</Authors>
+	<VersionPrefix>1.0.1</VersionPrefix>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -12,8 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
     <PackageReference Include="Zuravvski.Infrastructure.Settings" Version="1.0.0" />
   </ItemGroup>
 
