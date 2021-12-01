@@ -7,9 +7,7 @@ namespace Zuravvski.Infrastructure.Exceptions
 {
     internal sealed class DefaultExceptionMapperRegistry : IExceptionMapperRegistry
     {
-        private readonly ConcurrentDictionary<Regex, IExceptionToResponseMapper> _exceptionMapperRegistry =
-            new ConcurrentDictionary<Regex, IExceptionToResponseMapper>();
-
+        private readonly ConcurrentDictionary<Regex, IExceptionToResponseMapper> _exceptionMapperRegistry = new();
         private IExceptionToResponseMapper _fallbackMapper;
 
         public void Register<TExceptionMapper>(string namespaceRegex = null)

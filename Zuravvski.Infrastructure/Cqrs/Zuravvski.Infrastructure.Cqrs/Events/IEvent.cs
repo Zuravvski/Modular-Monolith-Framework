@@ -1,4 +1,4 @@
-﻿namespace Zuravvski.Infrastructure.Cqrs.Events
+﻿namespace Zuravvski.Infrastructure.Cqrs.Events.Abstractions
 {
     public interface IEvent
     {

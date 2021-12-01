@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Zuravvski.Infrastructure.Exceptions
+namespace Zuravvski.Infrastructure.Exceptions.Abstractions
 {
     public abstract class AppException : Exception
     {

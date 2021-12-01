@@ -5,10 +5,10 @@ namespace Zuravvski.Infrastructure.Settings
 {
     public static class Extensions
     {
-        public static TSettings GetSettings<TSettings>(this IConfiguration configuration, bool optional = false)
-            where TSettings : class, new()
+        public static TOptions GetOptions<TOptions>(this IConfiguration configuration, string optionsSectionName = null, bool optional = false)
+            where TOptions : class, new()
         {
-            var sectionName = typeof(TSettings).Name.Replace("Settings", string.Empty);
+            var sectionName = optionsSectionName ?? typeof(TOptions).Name.Replace("Options", string.Empty);
             var section = configuration.GetSection(sectionName);
 
             if (!section.Exists())
@@ -23,9 +23,9 @@ namespace Zuravvski.Infrastructure.Settings
                 }
             }
 
-            var settings = new TSettings();
-            section.Bind(settings);
-            return settings;
+            var options = new TOptions();
+            section.Bind(options);
+            return options;
         }
     }
 }

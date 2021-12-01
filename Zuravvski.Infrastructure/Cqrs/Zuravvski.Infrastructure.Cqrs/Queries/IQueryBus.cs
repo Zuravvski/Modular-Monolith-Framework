@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Zuravvski.Infrastructure.Cqrs.Queries
+namespace Zuravvski.Infrastructure.Cqrs.Queries.Abstractions
 {
     public interface IQueryBus
     {
