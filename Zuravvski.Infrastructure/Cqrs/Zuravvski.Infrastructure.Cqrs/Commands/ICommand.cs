@@ -1,4 +1,4 @@
-﻿namespace Zuravvski.Infrastructure.Cqrs.Commands
+﻿namespace Zuravvski.Infrastructure.Cqrs.Commands.Abstractions
 {
     public interface ICommand
     {

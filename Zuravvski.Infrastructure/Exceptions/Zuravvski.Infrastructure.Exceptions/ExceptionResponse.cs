@@ -1,16 +1,8 @@
 ﻿using System.Net;
 
-namespace Zuravvski.Infrastructure.Exceptions
+namespace Zuravvski.Infrastructure.Exceptions.Abstractions
 {
-    public class ExceptionResponse
-    {
-        public object Response { get; }
-        public HttpStatusCode StatusCode { get; }
-
-        public ExceptionResponse(object response, HttpStatusCode statusCode = HttpStatusCode.BadRequest)
-        {
-            Response = response;
-            StatusCode = statusCode;
-        }
-    }
+    public record ExceptionResponse(object Response, HttpStatusCode StatusCode = HttpStatusCode.BadRequest);
+    public record Error(string Code, string Message);
+    public record ErrorsResponse(params Error[] Errors);
 }

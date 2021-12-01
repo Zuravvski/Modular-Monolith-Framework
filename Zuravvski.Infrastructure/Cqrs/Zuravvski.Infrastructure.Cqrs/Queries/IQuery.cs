@@ -1,4 +1,4 @@
-﻿namespace Zuravvski.Infrastructure.Cqrs.Queries
+﻿namespace Zuravvski.Infrastructure.Cqrs.Queries.Abstractions
 {
     public interface IQuery<out TResult>
     {

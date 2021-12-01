@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Zuravvski.Infrastructure.Exceptions
 {
-    internal sealed class ErrorHandlerMiddleware : IMiddleware
+    public sealed class ErrorHandlerMiddleware : IMiddleware
     {
         private readonly IExceptionMapperRegistry _exceptionMapperRegistry;
         private readonly ILogger<ErrorHandlerMiddleware> _logger;
@@ -45,7 +45,7 @@ namespace Zuravvski.Infrastructure.Exceptions
             }
 
             context.Response.ContentType = MediaTypeNames.Application.Json;
-            await JsonSerializer.SerializeAsync(context.Response.Body, exceptionResponse.Response);
+            await JsonSerializer.SerializeAsync(context.Response.Body, exceptionResponse);
         }
     }
 }
