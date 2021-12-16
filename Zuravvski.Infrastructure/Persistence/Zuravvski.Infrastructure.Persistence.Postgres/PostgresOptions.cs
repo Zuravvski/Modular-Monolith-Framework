@@ -1,6 +1,6 @@
 ﻿namespace Zuravvski.Infrastructure.Persistence.Postgres
 {
-    public class PostgresSettings
+    public class PostgresOptions
     {
         public string Host { get; set; }
         public string Username { get; set; }

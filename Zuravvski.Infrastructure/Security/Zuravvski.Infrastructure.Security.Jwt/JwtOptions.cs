@@ -1,6 +1,6 @@
 ﻿namespace Zuravvski.Infrastructure.Security.Jwt
 {
-    public class JwtSettings
+    public class JwtOptions
     {
         public string SecretKey { get; init; }
         public long ExpirationTimeInMs { get; init; }

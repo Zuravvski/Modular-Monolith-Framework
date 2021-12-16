@@ -5,8 +5,9 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Zuravvski.Infrastructure.Exceptions.Abstractions;
 
-namespace Zuravvski.Infrastructure.Exceptions
+namespace Zuravvski.Infrastructure.Exceptions.Middleware
 {
     public sealed class ErrorHandlerMiddleware : IMiddleware
     {

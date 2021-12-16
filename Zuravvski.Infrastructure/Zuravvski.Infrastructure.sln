@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuravvski.Infrastructure.Cqrs.Abstractions", "Cqrs\Zuravvski.Infrastructure.Cqrs\Zuravvski.Infrastructure.Cqrs.Abstractions.csproj", "{8CEE3079-92DB-4960-9364-67FF6BD5F606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuravvski.Infrastructure.Cqrs.Abstractions", "Cqrs\Zuravvski.Infrastructure.Cqrs.Abstractions\Zuravvski.Infrastructure.Cqrs.Abstractions.csproj", "{8CEE3079-92DB-4960-9364-67FF6BD5F606}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuravvski.Infrastructure.Cqrs.Memory.Autofac", "Cqrs\Zuravvski.Infrastructure.Cqrs.Memory.Autofac\Zuravvski.Infrastructure.Cqrs.Memory.Autofac.csproj", "{056C7412-14D1-456E-B852-20A9FB4EC393}"
 EndProject
@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cqrs", "Cqrs", "{43147927-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exceptions", "Exceptions", "{55FBC7A6-3585-45FF-8A3B-DD92DC44B6BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuravvski.Infrastructure.Exceptions.Abstractions", "Exceptions\Zuravvski.Infrastructure.Exceptions\Zuravvski.Infrastructure.Exceptions.Abstractions.csproj", "{321239DA-426E-404F-A6DC-017CB9AE0C22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuravvski.Infrastructure.Exceptions.Abstractions", "Exceptions\Zuravvski.Infrastructure.Exceptions.Abstractions\Zuravvski.Infrastructure.Exceptions.Abstractions.csproj", "{321239DA-426E-404F-A6DC-017CB9AE0C22}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zuravvski.Infrastructure.Exceptions.Middleware", "Exceptions\Zuravvski.Infrastructure.Exceptions.Middleware\Zuravvski.Infrastructure.Exceptions.Middleware.csproj", "{BA8ADDC5-8B27-4280-89AE-6C60A1DEE13C}"
 EndProject

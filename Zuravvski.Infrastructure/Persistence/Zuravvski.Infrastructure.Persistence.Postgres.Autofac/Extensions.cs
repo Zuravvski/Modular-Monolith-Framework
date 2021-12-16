@@ -12,7 +12,7 @@ namespace Zuravvski.Infrastructure.Persistence.Postgres
                 .As<ISqlConnectionFactory>()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterSettings<PostgresSettings>(configuration);
+            builder.RegisterOptions<PostgresSettings>(configuration);
 
             builder.RegisterType<DefaultSqlQueryRunner>()
                 .As<ISqlQueryRunner>()

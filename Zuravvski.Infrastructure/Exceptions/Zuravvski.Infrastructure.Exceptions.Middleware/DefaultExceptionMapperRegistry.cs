@@ -2,8 +2,9 @@
 using System.Collections.Concurrent;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Zuravvski.Infrastructure.Exceptions.Abstractions;
 
-namespace Zuravvski.Infrastructure.Exceptions
+namespace Zuravvski.Infrastructure.Exceptions.Middleware
 {
     internal sealed class DefaultExceptionMapperRegistry : IExceptionMapperRegistry
     {

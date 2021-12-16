@@ -14,9 +14,9 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
-	<PackageReference Include="Zuravvski.DDD" Version="1.0.0" />
-	<PackageReference Include="Zuravvski.Infrastructure.Integration" Version="1.0.0" />
-	<PackageReference Include="Zuravvski.Infrastructure.Integration.EventProcessor" Version="1.0.0" />
+	<PackageReference Include="Zuravvski.DDD" Version="1.0.1" />
+	<PackageReference Include="Zuravvski.Infrastructure.Integration" Version="1.0.1" />
+	<PackageReference Include="Zuravvski.Infrastructure.Integration.EventProcessor" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

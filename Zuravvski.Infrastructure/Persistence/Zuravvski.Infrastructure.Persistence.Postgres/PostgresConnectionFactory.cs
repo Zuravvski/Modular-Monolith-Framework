@@ -5,9 +5,9 @@ namespace Zuravvski.Infrastructure.Persistence.Postgres
 {
     public class PostgresConnectionFactory : ISqlConnectionFactory
     {
-        private readonly PostgresSettings _postgresSettings;
+        private readonly PostgresOptions _postgresSettings;
 
-        public PostgresConnectionFactory(PostgresSettings postgresSettings)
+        public PostgresConnectionFactory(PostgresOptions postgresSettings)
         {
             _postgresSettings = postgresSettings;
         }

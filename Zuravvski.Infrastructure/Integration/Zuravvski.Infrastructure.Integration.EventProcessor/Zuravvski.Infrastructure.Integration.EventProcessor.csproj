@@ -13,8 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Zuravvski.DDD" Version="1.0.0" />
-    <PackageReference Include="Zuravvski.Infrastructure.Integration" Version="1.0.0" />
+    <PackageReference Include="Zuravvski.DDD" Version="1.0.1" />
+    <PackageReference Include="Zuravvski.Infrastructure.Integration" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

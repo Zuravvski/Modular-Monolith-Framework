@@ -8,7 +8,7 @@ namespace Zuravvski.Infrastructure.Security.Jwt
     {
         public static ContainerBuilder UseJwt(this ContainerBuilder builder, IConfiguration configuration)
         {
-            builder.RegisterInstance(configuration.GetSettings<JwtSettings>()).SingleInstance();
+            builder.RegisterInstance(configuration.GetOptions<JwtOptions>()).SingleInstance();
             builder.RegisterType<JwtHandler>().As<IJwtHandler>().InstancePerLifetimeScope();
             return builder;
         }

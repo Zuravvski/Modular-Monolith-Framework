@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Autofac;
+using Zuravvski.Infrastructure.Cqrs.Commands.Abstractions;
 
 namespace Zuravvski.Infrastructure.Cqrs.Commands
 {

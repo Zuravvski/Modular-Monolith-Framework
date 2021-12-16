@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
-	<PackageReference Include="Zuravvski.Infrastructure.Cqrs" Version="1.0.0" />
+	<PackageReference Include="Zuravvski.Infrastructure.Cqrs.Abstractions" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

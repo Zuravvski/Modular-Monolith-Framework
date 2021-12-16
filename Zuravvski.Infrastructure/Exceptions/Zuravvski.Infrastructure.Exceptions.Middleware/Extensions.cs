@@ -1,8 +1,9 @@
 ﻿using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Zuravvski.Infrastructure.Exceptions.Abstractions;
 
-namespace Zuravvski.Infrastructure.Exceptions
+namespace Zuravvski.Infrastructure.Exceptions.Middleware
 {
     public static class Extensions
     {

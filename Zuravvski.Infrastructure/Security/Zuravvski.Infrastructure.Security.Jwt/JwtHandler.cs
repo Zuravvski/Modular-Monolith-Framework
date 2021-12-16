@@ -7,13 +7,13 @@ namespace Zuravvski.Infrastructure.Security.Jwt
 {
     public class JwtHandler : IJwtHandler
     {
-        private readonly JwtSettings _jwtSettings;
+        private readonly JwtOptions _jwtSettings;
         private readonly JwtSecurityTokenHandler _jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
         private readonly SecurityKey _securityKey;
         private readonly SigningCredentials _signingCredentials;
         private readonly JwtHeader _jwtHeader;
 
-        public JwtHandler(JwtSettings jwtSettings)
+        public JwtHandler(JwtOptions jwtSettings)
         {
             _jwtSettings = jwtSettings;
             _securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));

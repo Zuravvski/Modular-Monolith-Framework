@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
 using Autofac;
 using Zuravvski.Infrastructure.Cqrs.Commands;
+using Zuravvski.Infrastructure.Cqrs.Commands.Abstractions;
 using Zuravvski.Infrastructure.Cqrs.Queries;
+using Zuravvski.Infrastructure.Cqrs.Queries.Abstractions;
 
 namespace Zuravvski.Infrastructure.Cqrs
 {

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 	<Description>Autofac Extensions Simple JWT Providers</Description>
 	<Copyright>Zuravvski IT Services</Copyright>
 	<Authors>Zuravvski</Authors>
@@ -15,8 +15,8 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Zuravvski.Infrastructure.Settings" Version="1.0.0" />
-    <PackageReference Include="Zuravvski.Infrastructure.Security.Jwt" Version="1.0.0" />
+    <PackageReference Include="Zuravvski.Infrastructure.Settings" Version="1.0.1" />
+    <PackageReference Include="Zuravvski.Infrastructure.Security.Jwt" Version="1.0.2" />
   </ItemGroup>
 
 </Project>

@@ -5,16 +5,17 @@ namespace Zuravvski.Infrastructure.Settings
 {
     public static class Extensions
     {
-        public static ContainerBuilder RegisterSettings<TSettings>(this ContainerBuilder builder,
-                                                                   IConfiguration configuration,
-                                                                   bool optional = false) where TSettings : class, new()
+        public static ContainerBuilder RegisterOptions<TOptions>(this ContainerBuilder builder,
+                                                                 IConfiguration configuration,
+                                                                 string sectionName = null,
+                                                                 bool optional = false) where TOptions : class, new()
         {
-            var settings = configuration.GetSettings<TSettings>(optional);
+            var settings = configuration.GetOptions<TOptions>(sectionName, optional);
 
-            if (settings is { })
+            if (settings is not null)
             {
                 builder.RegisterInstance(settings)
-                    .As<TSettings>()
+                    .As<TOptions>()
                     .SingleInstance()
                     .PreserveExistingDefaults();
             }

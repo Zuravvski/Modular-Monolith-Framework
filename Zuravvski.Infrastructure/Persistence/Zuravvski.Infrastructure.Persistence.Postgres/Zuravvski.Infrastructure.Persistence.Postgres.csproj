@@ -5,7 +5,7 @@
 	<Description>Generic Persistence Mechanisms For Postgres</Description>
 	<Copyright>Zuravvski IT Services</Copyright>
 	<Authors>Zuravvski</Authors>
-	<VersionPrefix>1.0.1</VersionPrefix>
+	<VersionPrefix>1.0.2</VersionPrefix>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="Npgsql" Version="6.0.0" />
-    <PackageReference Include="Zuravvski.Infrastructure.Persistence" Version="1.0.0" />
+    <PackageReference Include="Zuravvski.Infrastructure.Persistence" Version="1.0.1" />
   </ItemGroup>
 
 </Project>
