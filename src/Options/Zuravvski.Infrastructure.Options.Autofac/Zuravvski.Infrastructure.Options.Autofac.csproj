@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-	<Description>Autofac Extensions For .NET Core Settings Extensions</Description>
+	<Description>Autofac Extensions For .NET Core Options Extensions</Description>
 	<Authors>Zuravvski</Authors>
 	<Copyright>Zuravvski IT Services</Copyright>
-	<Title>Zuravvski.Infrastructure.Settings.Autofac</Title>
-	<AssemblyName>Zuravvski.Infrastructure.Settings.Autofac</AssemblyName>
-	<PackageId>Zuravvski.Infrastructure.Settings.Autofac</PackageId>
-	<PackageTags>Zuravvski.Infrastructure.Settings.Autofac</PackageTags>
+	<Title>Zuravvski.Infrastructure.Options.Autofac</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Options.Autofac</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Options.Autofac</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Options.Autofac</PackageTags>
 	<LangVersion>Latest</LangVersion>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Zuravvski.Infrastructure.Settings\Zuravvski.Infrastructure.Settings.csproj" />
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Options\Zuravvski.Infrastructure.Options.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-	<Description>.NET Core Settings Extensions</Description>
+	<Description>Integration Between The Modules In Modular Monolith Architecture</Description>
 	<Authors>Zuravvski</Authors>
 	<Copyright>Zuravvski IT Services</Copyright>
-	<Title>Zuravvski.Infrastructure.Settings</Title>
-	<AssemblyName>Zuravvski.Infrastructure.Settings</AssemblyName>
-	<PackageId>Zuravvski.Infrastructure.Settings</PackageId>
-	<PackageTags>Zuravvski.Infrastructure.Settings</PackageTags>
+	<Title>Zuravvski.Infrastructure.Integration</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Integration</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Integration</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Integration</PackageTags>
 	<LangVersion>Latest</LangVersion>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -17,8 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+    <ProjectReference Include="..\..\DDD\Zuravvski.DDD.csproj" />
   </ItemGroup>
 
 </Project>

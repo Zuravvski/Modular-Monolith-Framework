@@ -18,10 +18,10 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
-    <PackageReference Include="Zuravvski.Infrastructure.Integration" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DDD\Zuravvski.DDD.csproj" />
     <ProjectReference Include="..\Zuravvski.Infrastructure.Integration\Zuravvski.Infrastructure.Integration.csproj" />
   </ItemGroup>
 

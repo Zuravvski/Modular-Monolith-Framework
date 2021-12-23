@@ -20,11 +20,11 @@
     <PackageReference Include="Autofac" Version="6.3.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
     <PackageReference Include="Zuravvski.Infrastructure.Security.Jwt" Version="1.0.2" />
-    <PackageReference Include="Zuravvski.Infrastructure.Settings" Version="1.0.1" />
+    <PackageReference Include="Zuravvski.Infrastructure.Options" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Settings\Zuravvski.Infrastructure.Settings\Zuravvski.Infrastructure.Settings.csproj" />
+    <ProjectReference Include="..\..\Options\Zuravvski.Infrastructure.Options\Zuravvski.Infrastructure.Options.csproj" />
     <ProjectReference Include="..\Zuravvski.Infrastructure.Security.Jwt\Zuravvski.Infrastructure.Security.Jwt.csproj" />
   </ItemGroup>
 
