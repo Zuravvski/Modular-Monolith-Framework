@@ -3,9 +3,12 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
 	<Description>.NET Core Web Extensions</Description>
-	<Copyright>Zuravvski IT Services</Copyright>
 	<Authors>Zuravvski</Authors>
-	<VersionPrefix>1.0.1</VersionPrefix>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Web</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Web</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Web</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Web</PackageTags>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

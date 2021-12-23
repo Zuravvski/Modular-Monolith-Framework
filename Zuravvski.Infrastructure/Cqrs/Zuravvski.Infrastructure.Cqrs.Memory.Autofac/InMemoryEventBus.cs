@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
-using Zuravvski.Infrastructure.Cqrs.Events.Abstractions;
+using Zuravvski.Infrastructure.Cqrs.Abstractions.Events;
 
 namespace Zuravvski.Infrastructure.Cqrs.Events
 {

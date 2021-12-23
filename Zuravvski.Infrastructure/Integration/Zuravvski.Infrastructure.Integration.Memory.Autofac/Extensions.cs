@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using Autofac;
+using Zuravvski.Infrastructure.Integration.EventProcessor;
+using Zuravvski.Infrastructure.Integration.Memory.EventProcessor;
 
 namespace Zuravvski.Infrastructure.Integration.Memory
 {
@@ -21,6 +23,18 @@ namespace Zuravvski.Infrastructure.Integration.Memory
                     .AsClosedTypesOf(typeof(IIntegrationEventHandler<>))
                     .InstancePerLifetimeScope();
             }
+        }
+
+        public static void UseEventProcessor<TEventMapper>(this ContainerBuilder builder)
+            where TEventMapper : class, IEventMapper
+        {
+            builder.RegisterType<TEventMapper>()
+                .As<IEventMapper>()
+                .SingleInstance();
+
+            builder.RegisterType<AutofacBasedEventProcessor>()
+                .As<IEventProcessor>()
+                .InstancePerLifetimeScope();
         }
     }
 }

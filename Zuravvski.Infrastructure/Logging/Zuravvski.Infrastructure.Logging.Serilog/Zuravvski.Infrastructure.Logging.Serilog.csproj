@@ -3,9 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
 	<Description>Serilog Extensions</Description>
-	<Copyright>Zuravvski IT Services</Copyright>
 	<Authors>Zuravvski</Authors>
-	<VersionPrefix>1.0.1</VersionPrefix>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Logging.Serilog</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Logging.Serilog</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Logging.Serilog</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Logging.Serilog</PackageTags>
+	<LangVersion>Latest</LangVersion>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

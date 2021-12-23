@@ -3,16 +3,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Zuravvski.DDD;
+using Zuravvski.Infrastructure.Integration.EventProcessor;
 
-namespace Zuravvski.Infrastructure.Integration.EventProcessor
+namespace Zuravvski.Infrastructure.Integration.Memory.EventProcessor
 {
-    internal sealed class EventProcessor : IEventProcessor
+    internal sealed class AutofacBasedEventProcessor : IEventProcessor
     {
         private readonly IEventMapper _eventMapper;
         private readonly IIntegrationEventBusClient _busClient;
         private readonly IComponentContext _context;
 
-        public EventProcessor(IEventMapper eventMapper, IIntegrationEventBusClient busClient, IComponentContext context)
+        public AutofacBasedEventProcessor(IEventMapper eventMapper, IIntegrationEventBusClient busClient, IComponentContext context)
         {
             _eventMapper = eventMapper;
             _busClient = busClient;
@@ -53,7 +54,7 @@ namespace Zuravvski.Infrastructure.Integration.EventProcessor
 
                 var integrationEvent = _eventMapper.Map(domainEvent);
 
-                if (integrationEvent is { })
+                if (integrationEvent is not null)
                 {
                     integrationEvents.Add(integrationEvent);
                 }

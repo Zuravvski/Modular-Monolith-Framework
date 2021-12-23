@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Autofac;
-using Zuravvski.Infrastructure.Cqrs.Queries.Abstractions;
+using Zuravvski.Infrastructure.Cqrs.Abstractions.Queries;
 
 namespace Zuravvski.Infrastructure.Cqrs.Queries
 {

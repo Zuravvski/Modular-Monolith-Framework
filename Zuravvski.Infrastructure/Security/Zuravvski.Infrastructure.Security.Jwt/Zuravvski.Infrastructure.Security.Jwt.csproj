@@ -3,9 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
 	<Description>Simple JWT Providers</Description>
-	<Copyright>Zuravvski IT Services</Copyright>
 	<Authors>Zuravvski</Authors>
-	<VersionPrefix>1.0.2</VersionPrefix>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Security.Jwt</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Security.Jwt</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Security.Jwt</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Security.Jwt</PackageTags>
+	<LangVersion>Latest</LangVersion>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

@@ -3,9 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
 	<Description>CQRS Abstractions</Description>
-	<Copyright>Zuravvski IT Services</Copyright>
 	<Authors>Zuravvski</Authors>
-	<VersionPrefix>1.0.1</VersionPrefix>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Cqrs.Abstractions</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Cqrs.Abstractions</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Cqrs.Abstractions</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Cqrs.Abstractions</PackageTags>
+	<LangVersion>Latest</LangVersion>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
