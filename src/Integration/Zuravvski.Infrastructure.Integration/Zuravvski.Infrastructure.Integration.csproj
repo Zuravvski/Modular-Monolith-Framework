@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>Integration Between The Modules In Modular Monolith Architecture</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Integration</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Integration</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Integration</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Integration</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DDD\Zuravvski.DDD.csproj" />
+  </ItemGroup>
+
+</Project>

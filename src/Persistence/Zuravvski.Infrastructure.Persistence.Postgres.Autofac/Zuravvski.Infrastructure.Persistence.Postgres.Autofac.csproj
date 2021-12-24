@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>Autofac Extension For Generic Persistence Mechanisms For Postgres</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Persistence.Postgres.Autofac</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Persistence.Postgres.Autofac</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Persistence.Postgres.Autofac</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Persistence.Postgres.Autofac</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Zuravvski.Infrastructure.Options.Autofac" Version="1.0.1" />
+    <PackageReference Include="Zuravvski.Infrastructure.Persistence.Postgres" Version="1.0.1" />
+    <PackageReference Include="Zuravvski.Infrastructure.Persistence" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Options\Zuravvski.Infrastructure.Options.Autofac\Zuravvski.Infrastructure.Options.Autofac.csproj" />
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Persistence.Postgres\Zuravvski.Infrastructure.Persistence.Postgres.csproj" />
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Persistence\Zuravvski.Infrastructure.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

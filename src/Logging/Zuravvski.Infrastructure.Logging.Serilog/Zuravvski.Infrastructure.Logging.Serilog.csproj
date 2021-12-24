@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>Serilog Extensions</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Logging.Serilog</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Logging.Serilog</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Logging.Serilog</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Logging.Serilog</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.10.0" />
+  </ItemGroup>
+
+</Project>

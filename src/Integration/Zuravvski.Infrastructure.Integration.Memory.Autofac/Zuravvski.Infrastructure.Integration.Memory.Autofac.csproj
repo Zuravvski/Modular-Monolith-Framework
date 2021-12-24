@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>In Memory Integration Bus With Autofac Extension</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Integration.Memory.Autofac</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Integration.Memory.Autofac</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Integration.Memory.Autofac</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Integration.Memory.Autofac</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DDD\Zuravvski.DDD.csproj" />
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Integration\Zuravvski.Infrastructure.Integration.csproj" />
+  </ItemGroup>
+
+</Project>

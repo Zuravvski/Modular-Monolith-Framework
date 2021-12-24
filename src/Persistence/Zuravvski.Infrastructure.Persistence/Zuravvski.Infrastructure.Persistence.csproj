@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>Generic Persistence Mechanisms</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Persistence</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Persistence</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Persistence</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Persistence</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>

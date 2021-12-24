@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>In memory CQRS extensions for Autofac</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Cqrs.Memory.Autofac</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Cqrs.Memory.Autofac</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Cqrs.Memory.Autofac</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Cqrs.Memory.Autofac</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Cqrs.Abstractions\Zuravvski.Infrastructure.Cqrs.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

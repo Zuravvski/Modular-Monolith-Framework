@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>.NET Core Middleware For Exception Mappers</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Exceptions.Middleware</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Exceptions.Middleware</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Exceptions.Middleware</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Exceptions.Middleware</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression></PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Exceptions.Abstractions\Zuravvski.Infrastructure.Exceptions.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

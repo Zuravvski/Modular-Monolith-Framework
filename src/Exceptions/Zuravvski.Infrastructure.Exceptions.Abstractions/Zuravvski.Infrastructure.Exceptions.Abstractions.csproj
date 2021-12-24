@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>Exception Mappers For Modular Monolith Abstractions</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Exceptions.Abstractions</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Exceptions.Abstractions</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Exceptions.Abstractions</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Exceptions.Abstractions</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  
+</PropertyGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Description>Generic Persistence Mechanisms For Postgres</Description>
+	<Authors>Zuravvski</Authors>
+	<Copyright>Zuravvski IT Services</Copyright>
+	<Title>Zuravvski.Infrastructure.Persistence.Postgres</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Persistence.Postgres</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Persistence.Postgres</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Persistence.Postgres</PackageTags>
+	<LangVersion>Latest</LangVersion>
+	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Zuravvski.Infrastructure.Persistence\Zuravvski.Infrastructure.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
