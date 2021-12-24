@@ -5,13 +5,13 @@
 	<Description>In Memory Integration Bus With Autofac Extension</Description>
 	<Authors>Zuravvski</Authors>
 	<Copyright>Zuravvski IT Services</Copyright>
-	<Title>Zuravvski.Infrastructure.Integration.EventProcessor.Memory.Autofac</Title>
-	<AssemblyName>Zuravvski.Infrastructure.Integration.EventProcessor.Memory.Autofac</AssemblyName>
-	<PackageId>Zuravvski.Infrastructure.Integration.EventProcessor.Memory.Autofac</PackageId>
-	<PackageTags>Zuravvski.Infrastructure.Integration.EventProcessor.Memory.Autofac</PackageTags>
+	<Title>Zuravvski.Infrastructure.Integration.Memory.Autofac</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Integration.Memory.Autofac</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Integration.Memory.Autofac</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Integration.Memory.Autofac</PackageTags>
 	<LangVersion>Latest</LangVersion>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
-	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>

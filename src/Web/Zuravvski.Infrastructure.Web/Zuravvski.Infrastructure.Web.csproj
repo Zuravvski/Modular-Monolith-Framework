@@ -10,7 +10,7 @@
 	<PackageId>Zuravvski.Infrastructure.Web</PackageId>
 	<PackageTags>Zuravvski.Infrastructure.Web</PackageTags>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
-	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
