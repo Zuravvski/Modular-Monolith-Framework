@@ -19,9 +19,6 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Zuravvski.Infrastructure.Options.Autofac" Version="1.0.1" />
-    <PackageReference Include="Zuravvski.Infrastructure.Persistence.Postgres" Version="1.0.1" />
-    <PackageReference Include="Zuravvski.Infrastructure.Persistence" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
