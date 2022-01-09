@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Zuravvski.Infrastructure.Integration.Memory.Autofac
+﻿namespace Zuravvski.Infrastructure.Integration.Memory.DependencyInjection
 {
     internal sealed class InMemoryIntegrationEventBus
     {

@@ -1,23 +1,22 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Zuravvski.DDD;
 using Zuravvski.Infrastructure.Integration.EventProcessor;
 
-namespace Zuravvski.Infrastructure.Integration.Memory.Autofac.EventProcessor
+namespace Zuravvski.Infrastructure.Integration.Memory.DependencyInjection
 {
-    internal sealed class AutofacBasedEventProcessor : IEventProcessor
+    internal sealed class SynchronousEventProcessor : IEventProcessor
     {
         private readonly IEventMapper _eventMapper;
         private readonly IIntegrationEventBusClient _busClient;
-        private readonly IComponentContext _context;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public AutofacBasedEventProcessor(IEventMapper eventMapper, IIntegrationEventBusClient busClient, IComponentContext context)
+        public SynchronousEventProcessor(IEventMapper eventMapper,
+                                         IIntegrationEventBusClient busClient,
+                                         IServiceScopeFactory serviceScopeFactory)
         {
             _eventMapper = eventMapper;
             _busClient = busClient;
-            _context = context;
+            _serviceScopeFactory = serviceScopeFactory;
         }
 
         public async Task Process(IEnumerable<DomainEvent> events)
@@ -38,18 +37,15 @@ namespace Zuravvski.Infrastructure.Integration.Memory.Autofac.EventProcessor
         private async Task<IEnumerable<IntegrationEvent>> HandleDomainEvents(IEnumerable<DomainEvent> domainEvents)
         {
             var integrationEvents = new List<IntegrationEvent>();
+            using var scope = _serviceScopeFactory.CreateScope();
+
             foreach (var domainEvent in domainEvents)
             {
                 var handlerType = typeof(IDomainEventHandler<>).MakeGenericType(domainEvent.GetType());
-                var handlersType = typeof(IEnumerable<>).MakeGenericType(handlerType);
-                var resolved = _context.TryResolve(handlersType, out dynamic domainEventHandlers);
-
-                if (resolved)
+                dynamic handlers = scope.ServiceProvider.GetServices(handlerType);
+                foreach (var handler in handlers)
                 {
-                    foreach (var domainEventHandler in domainEventHandlers)
-                    {
-                        await domainEventHandler.Handle(domainEvent);
-                    }
+                    await handler.HandleAsync((dynamic) domainEvent);
                 }
 
                 var integrationEvent = _eventMapper.Map(domainEvent);

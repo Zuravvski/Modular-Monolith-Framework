@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Microsoft.Extensions.Configuration;
 
-namespace Zuravvski.Infrastructure.Settings
+namespace Zuravvski.Infrastructure.Options.Autofac
 {
     public static class Extensions
     {

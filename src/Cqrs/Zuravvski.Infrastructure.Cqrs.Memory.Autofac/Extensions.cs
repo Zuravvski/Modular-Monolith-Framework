@@ -2,10 +2,8 @@
 using Autofac;
 using Zuravvski.Infrastructure.Cqrs.Abstractions.Commands;
 using Zuravvski.Infrastructure.Cqrs.Abstractions.Queries;
-using Zuravvski.Infrastructure.Cqrs.Commands;
-using Zuravvski.Infrastructure.Cqrs.Queries;
 
-namespace Zuravvski.Infrastructure.Cqrs
+namespace Zuravvski.Infrastructure.Cqrs.Memory.Autofac
 {
     public static class Extensions
     {

@@ -1,48 +1,128 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Text;
+using System.Linq;
+using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Zuravvski.Infrastructure.Security.Jwt
 {
-    public class JwtHandler : IJwtHandler
+    internal sealed class JwtHandler : IJwtHandler
     {
-        private readonly JwtOptions _jwtSettings;
-        private readonly JwtSecurityTokenHandler _jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
-        private readonly SecurityKey _securityKey;
-        private readonly SigningCredentials _signingCredentials;
-        private readonly JwtHeader _jwtHeader;
+        private static readonly IDictionary<string, IEnumerable<string>> EmptyClaims = 
+            new Dictionary<string, IEnumerable<string>>();
 
-        public JwtHandler(JwtOptions jwtSettings)
+        private static readonly ISet<string> DefaultClaims = new HashSet<string>
         {
-            _jwtSettings = jwtSettings;
-            _securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
-            _signingCredentials = new SigningCredentials(_securityKey, SecurityAlgorithms.HmacSha256);
-            _jwtHeader = new JwtHeader(_signingCredentials);
+            JwtRegisteredClaimNames.Sub,
+            JwtRegisteredClaimNames.UniqueName,
+            JwtRegisteredClaimNames.Jti,
+            JwtRegisteredClaimNames.Iat,
+            ClaimTypes.Role,
+        };
+
+        private readonly JwtOptions _jwtOptions;
+        private readonly TokenValidationParameters _tokenValidationParameters;
+        private readonly JwtSecurityTokenHandler _jwtSecurityTokenHandler = new();
+        private readonly SigningCredentials _signingCredentials;
+
+        public JwtHandler(JwtOptions jwtOptions, TokenValidationParameters tokenValidationParameters)
+        {
+            _jwtOptions = jwtOptions ?? throw new ArgumentNullException(nameof(jwtOptions));
+            _tokenValidationParameters = tokenValidationParameters ?? throw new ArgumentNullException(nameof(tokenValidationParameters));
+            _signingCredentials = new SigningCredentials(
+                tokenValidationParameters.IssuerSigningKey, 
+                SecurityAlgorithms.HmacSha256
+            );
 
         }
-        public JsonWebToken Create(string email, Guid userId)
+
+        public JsonWebToken Create(string userId,
+                                   string role = null,
+                                   string audience = null,
+                                   IDictionary<string, IEnumerable<string>> claims = null)
         {
-            var nowUtc = DateTime.UtcNow;
-            var expires = nowUtc.AddMilliseconds(_jwtSettings.ExpirationTimeInMs);
-            var centuryBegin = new DateTime(1970, 1, 1).ToUniversalTime();
-            var exp = (long)(new TimeSpan(expires.Ticks - centuryBegin.Ticks).TotalSeconds);
-            var iat = (long)(new TimeSpan(nowUtc.Ticks - centuryBegin.Ticks).TotalSeconds);
-            var payload = new JwtPayload
+            if (string.IsNullOrWhiteSpace(userId))
             {
-                {"iss", _jwtSettings.Issuer},
-                {"iat", iat},
-                {"exp", exp},
-                {"unique_name", email},
-                {"id", userId}
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            if (_jwtOptions.ExpiresIn is null)
+            {
+                throw new ArgumentNullException(nameof(_jwtOptions.ExpiresIn));
+            }
+
+            var now = DateTime.UtcNow;
+
+            var jwtClaims = new List<Claim>
+            {
+                new(JwtRegisteredClaimNames.Iss, _jwtOptions.Issuer),
+                new(JwtRegisteredClaimNames.Sub, userId),
+                new(JwtRegisteredClaimNames.UniqueName, userId),
+                new(JwtRegisteredClaimNames.Iat, now.ToTimestamp().ToString()),
+                new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
-            var jwt = new JwtSecurityToken(_jwtHeader, payload);
+
+            if (!string.IsNullOrWhiteSpace(role))
+            {
+                jwtClaims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            if (!string.IsNullOrWhiteSpace(audience))
+            {
+                jwtClaims.Add(new Claim(JwtRegisteredClaimNames.Aud, audience));
+            }
+
+            if (claims?.Any() is true)
+            {
+                var customClaims = new List<Claim>();
+                foreach (var (claim, values) in claims)
+                {
+                    customClaims.AddRange(values.Select(value => new Claim(claim, value)));
+                }
+
+                jwtClaims.AddRange(customClaims);
+            }
+
+            var expiresIn = now.Add(_jwtOptions.ExpiresIn.Value);
+
+            var jwt = new JwtSecurityToken(
+                _jwtOptions.Issuer,
+                expires: expiresIn,
+                notBefore: now,
+                claims: jwtClaims,
+                signingCredentials: _signingCredentials
+            );
             var token = _jwtSecurityTokenHandler.WriteToken(jwt);
 
             return new JsonWebToken
             {
                 AccessToken = token,
-                ExpirationTime = exp
+                RefreshToken = string.Empty,
+                ExpirationTime = expiresIn.ToTimestamp(),
+                Subject = userId,
+                Role = role ?? string.Empty,
+                Claims = claims ?? EmptyClaims
+            };
+        }
+
+        public JsonWebTokenPayload GetPayload(string accessToken)
+        {
+            _jwtSecurityTokenHandler.ValidateToken(accessToken, _tokenValidationParameters, out var validatedToken);
+
+            if (validatedToken is not JwtSecurityToken token)
+            {
+                return null;
+            }
+
+            return new JsonWebTokenPayload
+            {
+                Subject = token.Subject,
+                Role = token.Claims.SingleOrDefault(claim => claim.Type == ClaimTypes.Role)?.Value,
+                ExpirationTime = token.ValidTo.ToTimestamp(),
+                Claims = token.Claims.Where(claim => !DefaultClaims.Contains(claim.Type))
+                    .GroupBy(claim => claim.Type)
+                    .ToDictionary(k => k.Key, v => v.Select(claim => claim.Value))
             };
         }
     }

@@ -1,17 +1,15 @@
-﻿using System;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Zuravvski.Infrastructure.Cqrs.Abstractions.Commands;
 
-namespace Zuravvski.Infrastructure.Cqrs.Memory.Autofac
+namespace Zuravvski.Infrastructure.Cqrs.Memory.DependencyInjection
 {
     internal sealed class InMemoryCommandBus : ICommandBus
     {
-        private readonly IComponentContext _context;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public InMemoryCommandBus(IComponentContext context)
+        public InMemoryCommandBus(IServiceScopeFactory serviceScopeFactory)
         {
-            _context = context;
+            _serviceScopeFactory = serviceScopeFactory;
         }
 
         public async Task Dispatch<TCommand>(TCommand command) where TCommand : class, ICommand
@@ -21,8 +19,9 @@ namespace Zuravvski.Infrastructure.Cqrs.Memory.Autofac
                 throw new ArgumentNullException(nameof(TCommand), "Command cannot be null");
             }
 
-            var handler = _context.Resolve<ICommandHandler<TCommand>>();
-            await handler.Handle(command);
+            using var scope = _serviceScopeFactory.CreateScope();
+            var handler = scope.ServiceProvider.GetRequiredService<ICommandHandler<TCommand>>();
+            await handler?.Handle(command);
         }
 
         public async Task<TResult> Dispatch<TResult>(ICommand<TResult> command)
@@ -32,9 +31,10 @@ namespace Zuravvski.Infrastructure.Cqrs.Memory.Autofac
                 throw new ArgumentNullException(nameof(ICommand<TResult>), "Command cannot be null");
             }
 
+            using var scope = _serviceScopeFactory.CreateScope();
             var handlerType = typeof(ICommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult));
-            var handler = _context.Resolve(handlerType);
-            return await (Task<TResult>)handlerType
+            var handler = scope.ServiceProvider.GetRequiredService(handlerType);
+            return await(Task<TResult>) handlerType
                .GetMethod(nameof(ICommandHandler<ICommand<TResult>, TResult>.Handle))
                ?.Invoke(handler, new[] { command });
         }

@@ -1,13 +1,13 @@
 ﻿using System.Reflection;
 using Autofac;
 using Zuravvski.Infrastructure.Integration.EventProcessor;
-using Zuravvski.Infrastructure.Integration.Memory.EventProcessor;
+using Zuravvski.Infrastructure.Integration.Memory.Autofac.EventProcessor;
 
-namespace Zuravvski.Infrastructure.Integration.Memory
+namespace Zuravvski.Infrastructure.Integration.Memory.Autofac
 {
     public static class Extensions
     {
-        public static void UseInMemoryIntegrationEvents(this ContainerBuilder builder, bool registerHandlersAutomatically = false)
+        public static void AddInMemoryIntegrationEvents(this ContainerBuilder builder, bool registerHandlersAutomatically = false)
         {
             builder.RegisterType<InMemoryIntegrationEventBusClient>()
                 .As<IIntegrationEventBusClient>()
@@ -25,7 +25,7 @@ namespace Zuravvski.Infrastructure.Integration.Memory
             }
         }
 
-        public static void UseEventProcessor<TEventMapper>(this ContainerBuilder builder)
+        public static void AddEventProcessor<TEventMapper>(this ContainerBuilder builder)
             where TEventMapper : class, IEventMapper
         {
             builder.RegisterType<TEventMapper>()

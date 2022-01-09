@@ -17,10 +17,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
     <PackageReference Include="Npgsql" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Options\Zuravvski.Infrastructure.Options\Zuravvski.Infrastructure.Options.csproj" />
     <ProjectReference Include="..\Zuravvski.Infrastructure.Persistence\Zuravvski.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 

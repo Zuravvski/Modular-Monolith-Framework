@@ -1,16 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-	<ImplicitUsings>enable</ImplicitUsings>
-	<Nullable>enable</Nullable>
-	<Description>In memory CQRS extensions for Autofac</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<Description>In memory CQRS extensions for .NET DI</Description>
 	<Authors>Zuravvski</Authors>
 	<Copyright>Zuravvski IT Services</Copyright>
-	<Title>Zuravvski.Infrastructure.Cqrs.Memory.Autofac</Title>
-	<AssemblyName>Zuravvski.Infrastructure.Cqrs.Memory.Autofac</AssemblyName>
-	<PackageId>Zuravvski.Infrastructure.Cqrs.Memory.Autofac</PackageId>
-	<PackageTags>Zuravvski.Infrastructure.Cqrs.Memory.Autofac</PackageTags>
+	<Title>Zuravvski.Infrastructure.Cqrs.Memory.DependencyInjection</Title>
+	<AssemblyName>Zuravvski.Infrastructure.Cqrs.Memory.DependencyInjection</AssemblyName>
+	<PackageId>Zuravvski.Infrastructure.Cqrs.Memory.DependencyInjection</PackageId>
+	<PackageTags>Zuravvski.Infrastructure.Cqrs.Memory.DependencyInjection</PackageTags>
 	<LangVersion>Latest</LangVersion>
 	<RepositoryUrl>https://github.com/Zuravvski/Modular-Monolith-Framework</RepositoryUrl>
 	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -19,7 +19,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Scrutor" Version="3.3.0" />
   </ItemGroup>
 
   <ItemGroup>
