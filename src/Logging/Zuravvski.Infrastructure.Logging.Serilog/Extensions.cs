@@ -1,6 +1,6 @@
 ﻿using Serilog;
 
-namespace Zuravvski.Infrastructure.Logging
+namespace Zuravvski.Infrastructure.Logging.Serilog
 {
     public static class Extensions
     {

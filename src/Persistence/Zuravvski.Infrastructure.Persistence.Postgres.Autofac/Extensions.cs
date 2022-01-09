@@ -1,8 +1,8 @@
 ﻿using Autofac;
-using Zuravvski.Infrastructure.Settings;
 using Microsoft.Extensions.Configuration;
+using Zuravvski.Infrastructure.Options.Autofac;
 
-namespace Zuravvski.Infrastructure.Persistence.Postgres
+namespace Zuravvski.Infrastructure.Persistence.Postgres.Autofac
 {
     public static class Extensions
     {

@@ -5,7 +5,7 @@ using Autofac;
 using Zuravvski.DDD;
 using Zuravvski.Infrastructure.Integration.EventProcessor;
 
-namespace Zuravvski.Infrastructure.Integration.Memory.EventProcessor
+namespace Zuravvski.Infrastructure.Integration.Memory.Autofac.EventProcessor
 {
     internal sealed class AutofacBasedEventProcessor : IEventProcessor
     {

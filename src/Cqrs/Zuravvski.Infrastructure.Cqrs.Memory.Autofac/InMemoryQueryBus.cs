@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Zuravvski.Infrastructure.Cqrs.Abstractions.Queries;
 
-namespace Zuravvski.Infrastructure.Cqrs.Queries
+namespace Zuravvski.Infrastructure.Cqrs.Memory.Autofac
 {
     internal sealed class InMemoryQueryBus : IQueryBus
     {

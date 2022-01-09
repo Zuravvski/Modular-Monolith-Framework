@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Zuravvski.Infrastructure.Cqrs.Abstractions.Events;
 
-namespace Zuravvski.Infrastructure.Cqrs.Events
+namespace Zuravvski.Infrastructure.Cqrs.Memory.Autofac
 {
     internal sealed class InMemoryEventBus : IEventBus
     {
@@ -25,7 +25,7 @@ namespace Zuravvski.Infrastructure.Cqrs.Events
 
             var didResolveHandler = _context.TryResolve(out IEnumerable<IEventHandler<TEvent>> handlers);
 
-            if(didResolveHandler)
+            if (didResolveHandler)
             {
                 var handlerTasks = handlers.Select(handler => handler.Handle(@event));
                 await Task.WhenAll(handlerTasks);

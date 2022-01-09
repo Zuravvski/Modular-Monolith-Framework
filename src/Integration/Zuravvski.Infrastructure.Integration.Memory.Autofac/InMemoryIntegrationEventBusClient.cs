@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Zuravvski.Infrastructure.Integration.Memory
+namespace Zuravvski.Infrastructure.Integration.Memory.Autofac
 {
     internal sealed class InMemoryIntegrationEventBusClient : IIntegrationEventBusClient
     {

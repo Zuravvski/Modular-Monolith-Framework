@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Zuravvski.Infrastructure.Cqrs.Abstractions.Commands;
 
-namespace Zuravvski.Infrastructure.Cqrs.Commands
+namespace Zuravvski.Infrastructure.Cqrs.Memory.Autofac
 {
     internal sealed class InMemoryCommandBus : ICommandBus
     {

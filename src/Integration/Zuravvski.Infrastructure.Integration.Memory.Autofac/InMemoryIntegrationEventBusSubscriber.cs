@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace Zuravvski.Infrastructure.Integration.Memory
+namespace Zuravvski.Infrastructure.Integration.Memory.Autofac
 {
     internal sealed class InMemoryIntegrationEventBusSubscriber : IIntegrationEventBusSubscriber
     {
