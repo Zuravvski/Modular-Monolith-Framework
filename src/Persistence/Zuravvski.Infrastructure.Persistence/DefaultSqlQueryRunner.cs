@@ -54,5 +54,48 @@ namespace Zuravvski.Infrastructure.Persistence
                 connection.Close();
             }
         }
+
+        public async Task RunInTransaction(Func<IDbConnection, Task> action)
+        {
+            using var connection = _connectionFactory.CreateNewOpenedConnection();
+            using var transaction = connection.BeginTransaction();
+
+            try
+            {
+                await action(connection);
+                transaction.Commit();
+            }
+            catch
+            {
+                transaction.Rollback();
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public async Task<TResult> RunInTransaction<TResult>(Func<IDbConnection, Task<TResult>> action)
+        {
+            using var connection = _connectionFactory.CreateNewOpenedConnection();
+            using var transaction = connection.BeginTransaction();
+
+            try
+            {
+                var result = await action(connection);
+                transaction.Commit();
+                return result;
+            }
+            catch
+            {
+                transaction.Rollback();
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
